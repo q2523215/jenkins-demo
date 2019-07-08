@@ -18,8 +18,8 @@ node('xsf-jnlp') {
     }
     stage('Push') {
         echo "4.Push Docker Image Stage"
-        withCredentials([usernamePassword(credentialsId: 'zylhub', passwordVariable: 'zylhubPassword', usernameVariable: 'zylhubUser')]) {
-            sh "docker login -u ${zylhubUser} -p ${zylhubPassword}"
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+            sh "docker login -u ${dockerHubUser} -p ${dockerHubPassword}"
             sh "docker push cnych/jenkins-demo:${build_tag}"
         }
     }
