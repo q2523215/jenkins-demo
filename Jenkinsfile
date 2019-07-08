@@ -14,7 +14,7 @@ node('xsf-jnlp') {
     }
     stage('Build') {
         echo "3.Build Docker Image Stage"
-        sh "docker build -t cnych/jenkins-demo:${build_tag} ."
+        sh "docker build -t q2523215/jenkins-demo:${build_tag} ."
     }
     stage('Push') {
         echo "4.Push Docker Image Stage"
